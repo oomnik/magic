@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <table>
+    <table id="table_tag">
         <thead>
             <tr>
                 <th>Set</th>
@@ -74,6 +74,8 @@
                     const row = createTableRow(card);
                     tableBody.appendChild(row);
                 }
+                const parent = document.getElementById('table_tag');
+                parent.appendChild(tableBody);
             })
             .catch(error => {
                 console.error('Error fetching JSON data:', error);
