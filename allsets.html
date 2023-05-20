@@ -20,7 +20,7 @@
         fetch('C:\\Users\\shawn\\Documents\\Web Development\\Magic\\sample.json')
             .then(response => response.json())
             .then(data => {
-                const sets = data.map(item => item.set_name);
+                const sets = data;
 
                 // Get the set list element
                 const setList = document.getElementById('set-list');
@@ -28,7 +28,7 @@
                 // Loop through sets and create list items
                 for (const set of sets) {
                     const listItem = document.createElement('li');
-                    listItem.textContent = set;
+                    listItem.textContent = set.set_name;
                     setList.appendChild(listItem);
                 }
             })
