@@ -32,6 +32,9 @@
             .then(data => {
                 const sets = data.data;
 
+                // Sort sets by descending release date
+                sets.sort((a, b) => new Date(b.released_at) - new Date(a.released_at));
+
                 // Get the set list tbody element
                 const setList = document.getElementById('set-list');
 
