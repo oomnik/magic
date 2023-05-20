@@ -33,10 +33,13 @@
                 const setList = document.getElementById('set-list');
 
                 // Loop through sets and create list items
-                for (const set of sets) {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = set.name;
-                    setList.appendChild(listItem);
+                for (const setKey in sets) {
+                    if (sets.hasOwnProperty(setKey)) {
+                        const set = sets[setKey];
+                        const listItem = document.createElement('li');
+                        listItem.textContent = set.name;
+                        setList.appendChild(listItem);
+                    }
                 }
             } else {
                 console.error('Error fetching set data:', xhr.statusText);
