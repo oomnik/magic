@@ -19,7 +19,7 @@
         <thead>
             <tr>
                 <th>Set</th>
-                <th>Cards</th>
+                <th>Card Count</th>
                 <th>Release Date</th>
             </tr>
         </thead>
@@ -30,10 +30,7 @@
         fetch('https://oomnik.github.io/magic/sample.json')
             .then(response => response.json())
             .then(data => {
-                const sets = data.sets;
-
-                // Sort sets by descending release date
-                sets.sort((a, b) => new Date(b.released_at) - new Date(a.released_at));
+                const sets = data;
 
                 // Get the set list tbody element
                 const setList = document.getElementById('set-list');
