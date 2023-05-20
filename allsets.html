@@ -27,19 +27,16 @@
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                const sets = response.data;
+                const sets = response.sets;
 
                 // Get the set list element
                 const setList = document.getElementById('set-list');
 
                 // Loop through sets and create list items
-                for (const setKey in sets) {
-                    if (sets.hasOwnProperty(setKey)) {
-                        const set = sets[setKey];
-                        const listItem = document.createElement('li');
-                        listItem.textContent = set.name;
-                        setList.appendChild(listItem);
-                    }
+                for (const set of sets) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = set.name;
+                    setList.appendChild(listItem);
                 }
             } else {
                 console.error('Error fetching set data:', xhr.statusText);
