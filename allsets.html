@@ -19,7 +19,7 @@
         <thead>
             <tr>
                 <th>Set</th>
-                <th>Card Count</th>
+                <th>Cards</th>
                 <th>Release Date</th>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
         fetch('https://oomnik.github.io/magic/sample.json')
             .then(response => response.json())
             .then(data => {
-                const sets = data;
+                const sets = data.data;
 
                 // Get the set list tbody element
                 const setList = document.getElementById('set-list');
